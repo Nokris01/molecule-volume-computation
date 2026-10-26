@@ -25,6 +25,7 @@
 *.VC.db
 *.VC.VC.opendb
 *.cif
+*.fasta
 *.vtk
 *.mvol
 *.gz

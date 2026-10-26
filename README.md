@@ -13,6 +13,7 @@ CMake is not required.
   output.
 - Uses OpenMP to parallelize voxel calculation.
 - Includes GLM in `glm/`, so GLM does not need to be installed separately.
+- Can write additional per-voxel atom-number density data, including per-element channels (--mvol).
 
 ## Requirements
 
