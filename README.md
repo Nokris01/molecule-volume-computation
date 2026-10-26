@@ -72,34 +72,6 @@ to be installed or included alongside the executable. Test the release on a
 clean Windows machine; do not assume that an `.exe` built on Linux will run on
 Windows.
 
-### Linux AppImage
-
-The repository includes an `AppDir/` staging directory for the Linux x86-64
-command-line app. Build the executable into it from the project root:
-
-```sh
-mkdir -p AppDir/usr/bin
-g++ -std=c++17 -O3 -fopenmp -I. main.cpp -o AppDir/usr/bin/volume_map
-```
-
-Install `linuxdeploy` and its AppImage output plugin, then deploy the executable
-and create the AppImage:
-
-```sh
-./linuxdeploy-x86_64.AppImage \
-  --appdir AppDir \
-  --executable AppDir/usr/bin/volume_map \
-  --desktop-file AppDir/usr/share/applications/volume-map.desktop \
-  --icon-file AppDir/usr/share/icons/hicolor/scalable/apps/volume-map.svg \
-  --output appimage
-```
-
-The generated AppImage is for Linux x86-64 only. Build it on an older
-glibc-based distribution (or compatible build environment) to maximize
-compatibility with older Linux distributions. `linuxdeploy` bundles the
-application's non-system shared-library dependencies; glibc is provided by the
-host system and must not be bundled. Test the output on target distributions.
-
 ## Run
 
 By default, the program reads each `.pdb` and `.cif` file in `batch/` and writes
